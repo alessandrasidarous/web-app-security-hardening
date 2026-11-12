@@ -1,10 +1,5 @@
 # Twittle - Analisi e Mitigazione delle Vulnerabilità in una Web Application
 
-> **Tesi di Laurea Triennale in Ingegneria Gestionale**  
-> **Politecnico di Torino** — A.A. 2024/2025  
-> **Candidata:** Alessandra Sidarous Farag  
-> **Relatore:** Prof. Andrea Atzeni  
-
 ---
 
 ## 📌 Panoramica del Progetto
