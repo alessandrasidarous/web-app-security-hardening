@@ -1,0 +1,19 @@
+<?php
+$serverName = $_SERVER['SERVER_ADDR'];
+$usernamedb = "normale";
+$passwordDb = "posso_leggere?";
+$dbname = "social_network";
+
+// Creo la connessione per l'utente normale
+$conn = mysqli_connect($serverName, $usernamedb, $passwordDb, $dbname);
+
+// Imposto il set di caratteri a utf8mb4 per la connessione
+mysqli_set_charset($conn, "utf8mb4");
+
+include_once __DIR__ . '/../log/function_log.php';
+
+if (mysqli_connect_errno()) {
+    logErrore("Connessione fallita: " . mysqli_connect_error());
+    die("<p>Errore del server. Riprova più tardi.</p>\n");
+}
+?>

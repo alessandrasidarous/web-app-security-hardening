@@ -1,0 +1,867 @@
+/* Reset di base */
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;  /* Imposta la dimensione degli elementi includendo padding e bordi */
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    font-family: "Poppins", sans-serif; 
+    font-size: 16px;  
+    color: #333;  
+}
+
+body {
+    background-color: #f9f9f9;  
+    line-height: 1.6;  /* Aumenta la spaziatura tra le righe di testo */
+}
+
+/* ----SPECIFICHE HEADER----- */
+
+header {
+    display: flex;
+    align-items: center;  /* Centra verticalmente il contenuto */
+    justify-content: center;  /* Centra logo e titolo */
+    padding: 10px 20px;
+    background-color: #1da1f2;
+    position: relative; /* Per il posizionamento assoluto del box tweet */
+}
+
+header .logo_pagine {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+header .site-title h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center; 
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+ .logo_titolo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .ultimo_tweet {
+    position: absolute;
+    left: 10px; 
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Corregge l'allineamento verticale */
+    background-color: rgba(255, 255, 255, 0.2); /* Sfondo simile al header, con trasparenza */
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    max-width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header .ultimo_tweet .username {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+header .ultimo_tweet .last-tweet {
+    font-size: 0.85rem;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* -----SPECIFICE MENU DI NAVIGAZIONE (più  giù ci sono quelle per il menu a tendina)----- */
+nav {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Aggiunge una leggera ombra sotto il menu */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #1da1f2;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;  /* Aggiunge una transizione graduale per il colore di sfondo e del testo */
+}
+
+nav ul li a:hover {
+    background-color: #1da1f2; 
+    color: white; 
+}
+
+nav ul li.disabled a {
+    color: #999; /* specifiche per tasti disabilitati */
+    pointer-events: none; /* Disabilita tutti gli eventi sul link */
+    cursor: default;
+    text-decoration: none;
+    opacity: 0.6; 
+}
+
+/* -----SPECIFICHE MAIN------- */
+main {
+    display: flex; 
+    flex-direction: column;  /* Imposta la disposizione degli elementi in verticale */
+    align-items: center;  
+    margin: 20px auto;  
+    padding: 0 20px;  
+    max-width: 1200px;  
+    gap: 20px; 
+}
+
+.columns {
+    display: flex;  
+    justify-content: space-between;  /* Allinea le colonne agli estremi */
+    width: 80%;  
+    gap: 20px;  
+}
+
+.left-column, .right-column {
+    flex: 1;  /* Le colonne si espandono per occupare lo spazio disponibile */
+    padding: 20px; 
+}
+
+.right-column{
+    background-color: white;  
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Aggiunge una leggera ombra alle colonne */
+    display: flex;  
+    flex-direction: column; 
+    justify-content: center;  
+    align-items: center;  
+    text-align: center; 
+    padding: 20px; 
+}
+.left-column{
+    background-color: transparent; 
+    color: #333;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;  
+    align-items: center;
+    text-align: center; 
+    padding: 20px;
+}
+
+.left-column .subtitle h2 {
+    color:  #1da1f2; 
+    margin-bottom: 10px;  
+    font-size: 1.5rem;
+    text-align: center;  
+}
+
+.left-column p {
+    font-size: 1rem; 
+    margin-top: 10px;  
+    line-height: 1.5; 
+}
+
+.left-column .logo {
+    display: block; 
+    margin: 20px auto;  
+    max-width: 100px;  
+    height: auto; 
+}
+
+.right-column .button-container {
+    text-align: center; 
+    display: flex;  
+    flex-direction: column; 
+    justify-content: center;  
+    align-items: center;  
+}
+
+.right-column p {
+    font-size: 1rem; 
+    margin-bottom: 10px;
+}
+
+.button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #1da1f2;  
+    color: white;  
+    font-size: 1.2rem; 
+    padding: 12px 30px; 
+    border: none;  
+    border-radius: 25px;  /* Arrotonda gli angoli del bottone */
+    cursor: pointer;  /* Cambia il cursore in una mano quando si passa sopra il bottone */
+    transition: background-color 0.3s ease-in-out;  /* Aggiunge una transizione per il colore di sfondo del bottone */
+
+
+
+    
+
+}
+
+.button:hover {
+    background-color: #0c85d0;  
+}
+
+/* -----SPECIFICHE DROPDOWN-MENU DELLA HOME----- */
+.dropdown-menu {
+    width: 80%; 
+    background-color: transparent; 
+    padding: 20px; 
+    text-align: center;  
+    margin: 0 auto;  /* Centra il menu orizzontalmente */
+}
+
+.dropdown-menu h3 {
+    margin-bottom: 10px; 
+    font-size: 1.2rem; 
+    color: #1da1f2; 
+}
+
+.dropdown-menu ul {
+    list-style: disc inside;  /* Usa i punti elenco per la lista e li allinea dentro il menu */
+    padding: 0; 
+    margin-top: 10px; 
+    text-align: left;  
+}
+
+.dropdown-menu li {
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd; /* linea di separazione */
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none; /* Rimuove la linea nell'ultimo elemento */
+}
+
+/* --------SPECIFICHE MESSAGGIO DI ERRORE--------- */
+.err {
+    color: red;  
+    font-weight: bold; 
+    text-align: center; 
+    margin-top: 10px;  
+}
+
+
+/* -------SPECIFICHE FOOTER----------- */
+footer {
+    text-align: center;  
+    background-color: #f1f1f1;  
+    padding: 10px 0; 
+    margin-top: 20px;
+    font-size: 0.9rem;  
+    color: #666; 
+}
+
+footer a {
+    color: #1da1f2;
+    text-decoration: none;  /* Rimuove la sottolineatura dai link */
+}
+
+footer a:hover {
+    text-decoration: underline;  /* Aggiunge la sottolineatura al passaggio del mouse sui link */
+}
+
+
+/* -------SPECIFICHE FORM DI REGISTRAZIONE / LOGIN -------- */
+.container {
+    width: 100%;
+    max-width: 600px;  
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px auto;  
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    text-align: center;  
+}
+
+.container h2 {
+    font-size: 2rem;
+    color: #1da1f2;
+    margin-bottom: 20px;
+}
+
+.form-component {
+    margin-bottom: 20px; 
+    text-align: left; 
+}
+
+.form-component label {
+    display: block; 
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-component input {
+    width: 100%; 
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    outline: none;  
+    transition: border-color 0.3s; 
+}
+
+.form-component input:focus {
+    border-color: #1da1f2;  /* Cambia il colore del bordo quando l'input è in focus */
+    box-shadow: 0 0 5px rgba(29, 161, 242, 0.5);
+}
+
+.error-message {
+    color: red;  /* Colore rosso per i messaggi di errore */
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.container button.button {
+    margin-top: 20px;
+    margin-bottom: 0;
+    background-color: #1da1f2;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button.button:hover {
+    background-color: #0c85d0;
+}
+
+/* -----SPECIFICHE SEZIONE TWEET (AREA SCOPRI E BACHECA)----- */
+.tweet-list {
+    max-width: 800px; 
+    margin: 20px auto;  /* Centra orizzontalmente la lista dei tweet */
+    padding: 20px;
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Aggiunge un'ombra leggera */
+    text-align: left;  
+}
+
+.tweet-list h2 {
+    font-size: 1.8rem;  
+    color: #1da1f2; 
+    margin-bottom: 5px;
+    text-align: center; 
+}
+
+.tweet-list h3 {
+    text-align: center; 
+    margin-top: 0; 
+    margin-bottom: 20px; 
+    font-size: 1.2rem; 
+    color: #555; 
+}
+
+.tweet-list p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.tweet {
+    padding: 15px;
+    margin-bottom: 20px;  
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    max-width: 100%;  /* Impedisce che il tweet si allarghi oltre il limite > non deforma la pagina, ma manda a capo*/
+    word-break: break-word;  /* Inizia a spezzare le parole troppo lunghe */
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    box-sizing: border-box;
+}
+
+.tweet .header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px;
+}
+
+.tweet .header .author {
+    font-size: 1rem;
+    font-weight: bold; 
+    color: #333;
+}
+
+.tweet .header .username {
+    font-size: 0.9rem;
+    color: #555; 
+    margin-left: 10px;
+}
+
+.tweet .header .date {
+    font-size: 0.8rem;
+    color: #999; 
+}
+
+.tweet .content {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5; 
+    margin-top: 10px;
+    word-wrap: break-word;  /* Impedisce al testo di fuoriuscire */
+    overflow-wrap: break-word; /* Necessario per alcuni browser */
+    white-space: normal;  /* Impedisce che il testo venga messo su una sola riga */
+}
+
+/* Stile per il messaggio "Nessun tweet disponibile" */
+.no-tweets {
+    font-size: 1rem;
+    color: #666;
+    text-align: center; 
+    margin: 20px 0;
+    padding: 10px;
+}
+
+/* -----STILI PER FILTRO TEMPORALE DELLA BACHECA----- */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap; /* Permette di adattarsi su più righe se lo spazio è limitato */
+    justify-content: center;
+    gap: 15px; /* Spaziatura uniforme tra gli elementi */
+    align-items: center;
+    margin: 20px 0; /* Margine superiore e inferiore */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.filter-form label {
+    font-size: 1rem;
+    margin-right: 5px;
+    color: #333;
+}
+
+.filter-form input[type="datetime-local"] {
+    font-size: 0.9rem;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.filter-form input[type="datetime-local"]:focus {
+    border-color: #1da1f2;
+    box-shadow: 0 0 5px rgba(29, 161, 242, 0.5);
+}
+
+.filter-form button {
+    background-color: #1da1f2;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-form button:hover {
+    background-color: #0c85d0;
+}
+
+/* -----STILI PER MESSAGGIO "NESSUN TWEET" ----- */
+.no-tweets a {
+    color: #1da1f2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.no-tweets a:hover {
+    text-decoration: underline;
+}
+/* ---SPECIFICHE PER SCRIVI.php--- */
+.tweet-box {
+    max-width: 600px; 
+    margin: 30px auto; /* Centra la lista al centro della pagina */
+    padding: 30px;
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+    text-align: center; /* Centralizza il contenuto */
+}
+
+.tweet-box h2 {
+    font-size: 2rem; 
+    color: #1da1f2; 
+    margin-bottom: 10px; 
+}
+
+.tweet-box h3 {
+    font-size: 1.5rem;
+    color: #555; 
+    margin-bottom: 20px; 
+}
+
+form#tweetForm {
+    display: flex;
+    flex-direction: column; /* Organizza gli elementi in verticale */
+    align-items: center;
+    gap: 15px; /* Spaziatura uniforme tra gli elementi */
+}
+
+form#tweetForm label {
+    font-size: 1rem;
+    color: #333; 
+    font-weight: bold; 
+}
+
+form#tweetForm textarea {
+    width: 100%; /* Occupa tutto lo spazio disponibile */
+    max-width: 100%; 
+    padding: 10px; 
+    font-size: 1rem;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    outline: none;
+    resize: none; /* Impedisce il ridimensionamento */
+    transition: border-color 0.3s;
+}
+
+form#tweetForm textarea:focus {
+    border-color: #1da1f2; 
+    box-shadow: 0 0 5px rgba(29, 161, 242, 0.5); 
+}
+
+form#tweetForm button {
+    font-size: 1rem; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    border: none; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+form#tweetForm button#submitTweet {
+    background-color: #1da1f2; 
+    color: white;
+}
+
+form#tweetForm button#submitTweet:hover {
+    background-color: #0c85d0; 
+}
+
+form#tweetForm button#cancelTweet {
+    background-color: #f9f9f9;
+    color: #333; 
+    border: 1px solid #ccc;
+}
+
+form#tweetForm button#cancelTweet:hover {
+    background-color: #ddd; 
+}
+
+/* Messaggio di errore( per pagine senza autenticazione)!!!! */
+.err {
+    margin-bottom: 20px; 
+    padding: 10px;
+    background-color: #ffdddd; 
+    border: 1px solid red; 
+    border-radius: 5px;
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Il menu a tendina è nascosto di default (se lo schermo è largo)*/
+nav .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Nascondi il bottone su schermi più grandi */
+.menu-toggle {
+    display: none;
+}
+
+
+
+/* DISPOSIZIONI PER SCHERMI PIù PICCOLI!!! (meno di 768px) */
+@media (max-width: 768px) {
+    /* -----SPECIFICHE PER MENU DI NAVIGAZIONE---> DIVENTA MENU A TENDINA------- */
+    nav ul.main-menu {
+        display: none;
+    }
+
+    /* Mostra il bottone per il menu a tendina */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /* Menu a tendina visibile solo quando è attivato */
+    nav .dropdown-menu.show {
+        display: flex;
+    }
+
+    /* -----SPECIFICHE PER HEADER-------- */
+    header {
+        flex-direction: column;  /* Cambia l'orientamento a colonna */
+        justify-content: center;  /* Centra il contenuto verticalmente */
+        align-items: center;
+    }
+
+    /* Sposta l'ultimo tweet sopra il logo e titolo, centrato */
+    header .ultimo_tweet {
+        position: relative; 
+        top: auto;
+        left: auto;  /* Non è più a sinistra */
+        margin-bottom: 0px; 
+        margin-top: 30px; 
+        text-align: center; 
+    }
+
+    /* Imposta il logo e il titolo fianco a fianco, anche sui dispositivi piccoli */
+    .logo_titolo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .logo_pagine {
+        margin-right: 10px;
+    }
+    
+    /* ---- SPECIFICHE SEZIONE MAIN (COLONNE) ---- */
+    .columns {
+        flex-direction: column;  /* Cambia la disposizione delle colonne a colonna */
+        gap: 15px;  /* Riduce il gap tra le colonne */
+        width: 90%;
+    }
+
+    .left-column, .right-column {
+        flex: 1;
+        padding: 15px;
+    }
+
+    .left-column .subtitle h2 {
+        font-size: 1.25rem;  /* Riduce la dimensione del sottotitolo */
+    }
+
+    /*-----specifiche bacheca, scrivi---- */
+    
+    .tweet .content {
+        word-wrap: break-word; /* Prevenire dche il testo fuoriesca */
+        overflow-wrap: break-word; 
+    }
+    
+    
+    
+}
+
+
+/* indicazioni per schermi ancora + piccoli, come smartphone */
+@media (max-width: 480px) {
+    .tweet .header {
+        flex-direction: column; /* Cambia la direzione degli elementi su schermi piccoli */
+        align-items: flex-start; /* Allinea gli elementi all'inizio della riga */
+    }
+
+    .tweet .header .author {
+        font-size: 1rem;  
+        margin-right: 0; 
+        margin-bottom: 0;
+    }
+
+    .tweet .header .time {
+        font-size: 0.8rem;  
+        margin-top: 5px; 
+    }
+
+    .tweet .header .username {
+        font-size: 0.85rem; 
+        margin-top: 0;   
+    }
+
+    .tweet .content {
+        font-size: 0.9rem; 
+    }
+
+
+     /* ---- SPECIFICHE SEZIONE "SCRIVI" ---- */
+     .tweet-box {
+        width: 100%;
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    .tweet-box h2 {
+        font-size: 1.8rem;  /* Riduce la dimensione del titolo */
+    }
+
+    .tweet-box h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    form#tweetForm textarea {
+        font-size: 0.9rem;  /* Riduce la dimensione del testo nel textarea */
+        padding: 8px;
+    }
+
+    /* Riduce la spaziatura tra i bottoni */
+    form#tweetForm button {
+        padding: 8px 18px;
+    }
+
+    footer { 
+        font-size: 0.8rem;
+    }
+}
+
+
+/* ------specifiche per la stampa----- */
+@media print {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* font-family  adatto per la stampa */
+    body, h1, h2, h3, h4, h5, h6, p, ul, li {
+        font-family: "Arial", sans-serif;
+        font-size: 12pt;
+        color: #000;
+        line-height: 1.4;
+    }
+
+    /* Nasconde il menu di navigazione  */
+    nav, .menu-toggle {
+        display: none !important;
+    }
+
+    main {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .columns {
+        display: block; 
+        gap: 0;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        padding: 0;
+    }
+
+    .tweet-list, .tweet {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: transparent; 
+    }
+
+    .tweet .header {
+        display: block; 
+        margin-bottom: 5px;
+    }
+
+    .tweet .content {
+        font-size: 10pt;
+        word-wrap: break-word; 
+    }
+
+    img {
+        display: none;
+    }
+
+    .container {
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .button, .button-container {
+        display: none; /* Rimuove i pulsanti dalla stampa */
+    }
+
+    .left-column .subtitle h2,
+    .left-column p {
+        font-size: 12pt;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 14pt;
+        font-weight: bold;
+    }
+
+    footer a {
+        text-decoration: underline;   /*sottolineo il link*/
+    }
+
+    .form-component {
+        margin-bottom: 15px; 
+    }
+
+    .form-component input {
+        width: 100%;
+        margin-bottom: 10px; /* Spazio tra gli input */
+    }
+
+    .tweet-box {
+        padding: 10px;
+        margin-top: 20px;
+        box-shadow: none;
+    }
+
+    .tweet .content {
+        font-size: 10pt;
+    }
+
+    .no-tweets {
+        font-size: 12pt; 
+    }
+
+    .filter-form {
+        display: block; 
+    }
+
+    body {
+        margin: 20px;
+    }
+
+    .tweet-list {
+        width: 100%;  /* Rende la lista dei tweet a larghezza piena */
+    }
+
+
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+
+    /* Mostra l'URL accanto ai link */
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 10pt; /* Dimensione del font per l'URL */
+        color: #666; 
+    }
+}

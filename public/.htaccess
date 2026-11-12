@@ -1,0 +1,21 @@
+RewriteEngine On
+
+# Verifica se HTTPS è disattivato o se l'intestazione X-Forwarded-Proto è diversa da https
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+
+# Reindirizza a HTTPS
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# blocca l'accesso al file .htaccess 
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Impedisce browsing delle cartelle
+Options -Indexes
+
+
+
+

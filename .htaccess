@@ -1,0 +1,7 @@
+# blocca l'accesso al file .htaccess 
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Impedisce browsing delle cartelle
+Options -Indexes

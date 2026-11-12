@@ -1,0 +1,12 @@
+# anche se non contiene info private, blocco l'accesso dal browser tramite url
+# non ha senso che rimangano accessibili, in quanto sono componenti delle pagine
+# non sono pagine complete, quindi non sono pensate per essere visualizzate da sole, si otterrebbe una pagina rotta
+
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+  Deny from all
+</IfModule>
+

@@ -1,0 +1,16 @@
+# Variabili d'ambiente e segreti
+app/security/.env
+.env
+*.env
+
+# File di Log
+app/log/*.log
+*.log
+
+# File di sistema e dell'editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
